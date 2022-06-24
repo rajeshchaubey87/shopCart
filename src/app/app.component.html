@@ -1,3 +1,30 @@
-<div class="container">
-  <div class="mt-4">Rajesh</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link "
+          [routerLinkActive]="['active']"
+          routerLink="/"
+          routerLinkActiveOptions="{exact:true}">
+          Home
+        </a>
+        </li>
+        <li class="nav-item"><a class="nav-link " routerLinkActive="active act" routerLink="about">About</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active act" routerLink="contact">Contact</a></li>
+        <li class="nav-item "><a class="nav-link" routerLinkActive="active act" routerLink="login">Login</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active act" routerLink="dashboard">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active act" routerLink="signup">SignUP</a></li>
+
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

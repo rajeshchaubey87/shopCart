@@ -1,1 +1,79 @@
-<p>login works!</p>
+<div class="loginCenter mx-auto">
+    <div class="row ">
+        <div class="col-md-6">
+            <form (ngSubmit)=loginForm() >
+
+                <button class="btn btn-success" (click)="fillDataSignUpForm()">Fill Values</button>
+
+
+                <div *ngIf="!userData.valid && userData.touched"> user data is not valid </div>
+                <div >
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input id="username" class="form-control" name="username" type="text"  required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input id="Email" name="Email" class="form-control" type="email" ngModel required email
+                           >
+
+                        <div class="help-text mt-2" *ngIf="!email.valid && email.touched"> Please enter valid Email ID
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" class="form-control" type="text" >
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div *ngFor="let qualification of qualifications">
+                    <label>
+                        <input type="radio" id="text" name="qualification " [value]="qualification">
+                        {{qualification}}
+                    </label>
+                </div>
+
+
+
+
+
+                <div class="form-group mt-2">
+                    <label for="aboutUs">
+                        About US
+                    </label>
+                    <textarea name="aboutUs" id="aboutUs" cols="20" class="form-control" rows="10"
+                        ></textarea>
+                </div>
+
+                <div class="mt-3">
+
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-2" >Submit </button>
+
+
+
+
+                <h3>
+                    USER DATA SAVED SUCCESSFULLY
+                </h3>
+
+                <div>Name :: {{userDetails.username  }}</div>
+                <div>Email :: {{userDetails.Email }}</div>
+                <div>Gender :: {{userDetails.gender  }}</div>
+                <div>AboutUS :: {{userDetails.aboutUs }}</div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
